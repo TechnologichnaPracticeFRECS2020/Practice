@@ -1,0 +1,34 @@
+{% extends "Home/base.html" %}
+{% block content %}
+     <input type="radio" checked="checked" name="variant" id ="var1" /> <label>Генерація випадкового числа</label>
+     <input type="radio" name="variant" id="var2"/> <label>Генерація послідовності чисел із заданого діапазону</label>
+     <input type="radio" name="variant" id="var3"/> <label> Вибір випадкового слова з вказаного тексту</label>
+     <input type="radio" name="variant" id="var4"/> <label> Генерація паролю</label>
+     <input type="radio" name="variant" id="var5"/> <label> Генерація наборів паролів</label>
+     <div class="randommethods">
+          <div class="metod" id="metod1">
+               <input type="button" name="metod1button" value="Generate">
+          </div>
+          <div class="metod" id="metod2">
+               <input type="number" min="-2147483648" max="+2147483647" value="1">
+               <input type="number" min="-2147483648" max="+2147483647" value="100">
+               <input type="button" name="metod2button" value="Generate">
+          </div>
+          <div class="metod" id="metod3">
+               <form enctype="multipart/form-data" method="post">
+                    <p><input type="file" name="f">
+                    <p><b>Введіть текст</b></p>
+                    <p><textarea name="text"></textarea></p>
+                    <p><input type="submit" name="metod3button" value="Generate"></p>
+                </form>
+          </div>
+          <div class="metod" id="metod4">
+               <input type="button" name="metod4button" value="Generate">
+          </div>
+          <div class="metod" id="metod5">
+               <input type="button" name="metod5button" value="Generate">
+          </div>
+     </div>
+
+{% endblock content %}
+

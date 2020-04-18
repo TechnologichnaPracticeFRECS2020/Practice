@@ -13,13 +13,13 @@ def register(request):
             messages.success(request, f'Your account has been created! You are now able to log in')
             return redirect('random-home')
     else:
-        form = UserRegisterForm ()
+        form = UserRegisterForm()
     return render(request, 'users/register.html', {'form': form})
 
 @login_required()
 def user(request):
     context = {
-        'requestpage': UserRequest.objects.all()
+        'requestpage': UserRequest.objects.filter(requester=request.user)
     }
     return render(request, 'users/user.html', context)
 

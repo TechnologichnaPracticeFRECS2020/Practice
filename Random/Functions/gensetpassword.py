@@ -1,15 +1,13 @@
 import random
 
-def gensetpassword():
+def gensetpassword(number, length):
     chars = '+-/*!@#$%^&?=<>abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
-    number = 5
-    length = 10
-    password = ''
+    password = []
     for m in range(number):
+        password1 = ''
         for i in range(length):
-            password += random.choice(chars)
-        password += '\n'
-    print(password)
+            password1 += random.choice(chars)
+        password.append(password1)
     return password
 
 

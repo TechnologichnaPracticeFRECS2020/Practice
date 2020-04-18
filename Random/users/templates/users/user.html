@@ -4,8 +4,8 @@
     <p>User Page {{ user.username }}</p>
     <p>history all</p>
      {% for request in requestpage %}
-
           <div>
+
               <a href="#">{{ request.type }}</a>
               <small>{{ request.result }}</small>
             <h2>{{ request.request_time }}</h2>

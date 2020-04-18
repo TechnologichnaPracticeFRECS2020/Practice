@@ -1,9 +1,8 @@
 import random
 import re
 
-def randomword():
+def randomword(text):
     rep=re.compile("[^a-zA-Zа-яА-я,\d]")
-    text=input()
     final=rep.sub(" ",text)
     def ran_word(string):
       word = string.split()

@@ -7,26 +7,87 @@
      <input type="radio" name="variant" id="var5"/> <label> Генерація наборів паролів</label>
      <div class="randommethods">
           <div class="metod" id="metod1">
-               <input type="button" name="metod1button" value="Generate">
+               <form  method="post">
+                    {% csrf_token %}
+                    {% if request.user.is_authenticated %}
+                         <p>{{ reqnum1.result }}</p>
+                    {% else %}
+                         <p>{{ reqnum1 }}</p>
+                    {% endif %}
+                    <input type="submit" name="metod1button" value="Generate" />
+               </form>
           </div>
           <div class="metod" id="metod2">
-               <input type="number" min="-2147483648" max="+2147483647" value="1">
-               <input type="number" min="-2147483648" max="+2147483647" value="100">
-               <input type="button" name="metod2button" value="Generate">
+               <form action="" method="post">
+                    {% csrf_token %}
+                    {% if request.user.is_authenticated %}
+                         <p>
+                              <input type="number" name="range1" min="-2147483648" max="+2147483647" value="1">
+                              <input type="number" name="range2" min="-2147483648" max="+2147483647" value="100">
+                              <p>{{ reqnum2.result }}</p>
+                         </p>
+                    {% else %}
+                         <p>
+                              <input type="number" name="range1" min="-2147483648" max="+2147483647" value="1">
+                              <input type="number" name="range2" min="-2147483648" max="+2147483647" value="100">
+                              <p>{{ reqnum2 }}</p>
+                         </p>
+                    {% endif %}
+                    <input type="submit" name="metod2button" value="Generate" />
+               </form>
           </div>
           <div class="metod" id="metod3">
                <form enctype="multipart/form-data" method="post">
-                    <p><input type="file" name="f">
-                    <p><b>Введіть текст</b></p>
-                    <p><textarea name="text"></textarea></p>
+                    {% csrf_token %}
+                    {% if request.user.is_authenticated %}
+                         <p>
+                              <p><input type="file" name="f">
+                              <p><b>Введіть текст</b></p>
+                              <p><textarea name="text"></textarea></p>
+                              <p>{{ reqnum3.result }}</p>
+                         </p>
+                    {% else %}
+                         <p>
+                              <p><input type="file" name="f">
+                              <p><b>Введіть текст</b></p>
+                              <p><textarea name="text"></textarea></p>
+                              <p>{{ reqnum3 }}</p>
+                         </p>
+                    {% endif %}
                     <p><input type="submit" name="metod3button" value="Generate"></p>
                 </form>
           </div>
           <div class="metod" id="metod4">
-               <input type="button" name="metod4button" value="Generate">
+               <form enctype="multipart/form-data" method="post">
+                    {% csrf_token %}
+                    {% if request.user.is_authenticated %}
+                         <p>{{ reqnum4.result }}</p>
+                    {% else %}
+                         <p>{{ reqnum4 }}</p>
+                    {% endif %}
+                    <input type="submit" name="metod4button" value="Generate">
+               </form>
           </div>
           <div class="metod" id="metod5">
-               <input type="button" name="metod5button" value="Generate">
+                <form enctype="multipart/form-data" method="post">
+                    {% csrf_token %}
+                     {% csrf_token %}
+                    {% if request.user.is_authenticated %}
+                         <p>
+                              <input type="number" name="numberpasswd"  value="1">
+                              <input type="number"  name="len"  value="100">
+                              <p>{{ reqnum5.result }}</p>
+                         </p>
+                    {% else %}
+                         <p>
+                              <input type="number" name="numberpasswd"  value="1">
+                              <input type="number"  name="len"  value="100">
+                              <p>{{ reqnum5 }}</p>
+                         </p>
+                    {% endif %}
+                    <input type="submit" name="metod5button" value="Generate">
+               </form>
+
           </div>
      </div>
 

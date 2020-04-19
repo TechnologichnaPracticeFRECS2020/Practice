@@ -12,7 +12,6 @@ from django.utils import timezone
 
 def home(request):
     if request.method == 'POST':
-        form = RequestForm(request.POST)
         if 'metod1button' in request.POST:
             if request.user.is_authenticated:
                 res1 = generatenumber.gennum()

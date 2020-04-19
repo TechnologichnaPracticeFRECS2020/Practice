@@ -1,10 +1,19 @@
 {% extends "Home/base.html" %}
 {% block content %}
-     <input type="radio" checked="checked" name="variant" id ="var1" /> <label>Генерація випадкового числа</label>
-     <input type="radio" name="variant" id="var2"/> <label>Генерація послідовності чисел із заданого діапазону</label>
-     <input type="radio" name="variant" id="var3"/> <label> Вибір випадкового слова з вказаного тексту</label>
-     <input type="radio" name="variant" id="var4"/> <label> Генерація паролю</label>
-     <input type="radio" name="variant" id="var5"/> <label> Генерація наборів паролів</label>
+
+     <div class="radiolist">
+
+          <input type="radio" checked="checked" name="raz" value="1" id ="var1"/>
+          <label for="var1">Генерація випадкового числа</label>
+          <input type="radio" name="raz" value="2" id="var2" />
+          <label for="var2">Генерація послідовності чисел із заданого діапазону</label>
+          <input type="radio" name="raz" value="3" id="var3"/>
+          <label for="var3">Вибір випадкового слова з вказаного тексту</label>
+          <input type="radio" name="raz" value="4" id="var4"/>
+          <label for="var4">Генерація паролю</label>
+          <input type="radio" name="raz" value="5" id="var5"/>
+          <label for="var5"> Генерація наборів паролів</label>
+
      <div class="randommethods">
           <div class="metod" id="metod1">
                <form  method="post">
@@ -41,7 +50,6 @@
                     {% csrf_token %}
                     {% if request.user.is_authenticated %}
                          <p>
-                              <p><input type="file" name="f">
                               <p><b>Введіть текст</b></p>
                               <p><textarea name="text"></textarea></p>
                               <p>{{ reqnum3.result }}</p>
@@ -89,7 +97,7 @@
                </form>
 
           </div>
+          </div>
      </div>
-
 {% endblock content %}
 

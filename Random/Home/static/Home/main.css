@@ -25,9 +25,24 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
 }
 .randommethods {
-  width: 300px;
+  width: 500px;
   height: 150px;
   transition: .5s;
+}
+#var1:checked ~ label[for="var1"]{
+    color:#5f788a;
+}
+#var2:checked ~ label[for="var2"]{
+    color:#5f788a;
+}
+#var3:checked ~ label[for="var3"]{
+    color:#5f788a;
+}
+#var4:checked ~ label[for="var4"]{
+    color:#5f788a;
+}
+#var5:checked ~ label[for="var5"]{
+    color:#5f788a;
 }
 #var1:checked ~ .randommethods>#metod1 {
     display:block;
@@ -115,11 +130,47 @@ a.article-title:hover {
 .account-heading {
   font-size: 2.5rem;
 }
+.content {
+    width: 1000px;
+    height: 2000px;
+    margin: 10px;
+}
+.history {
+    float:left;
+    width: 300px;
 
-
-
-
-
+}
+.statistic {
+    float:right;
+    width: 300px;
+}
+.historyt {
+    border-spacing: 30px;
+   }
+.historyt td,th {
+    padding: 20px;
+}
+.randomhis {
+    margin: 20px;
+}
+.tabler {
+    border-spacing: 10px;
+}
+.tabler td,th {
+    padding: 10px;
+}
+.radiolist>input:nth-child(2n) {
+    display:table;
+}
+.radiolist>label{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+input[name="raz"]{
+    display:none;
+}
 
 
 

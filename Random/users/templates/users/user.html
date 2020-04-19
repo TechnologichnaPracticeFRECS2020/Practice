@@ -1,16 +1,80 @@
 {% extends "Home/base.html" %}
 {% csrf_token %}
 {% block content %}
-    <p>User Page {{ user.username }}</p>
-    <p>history all</p>
-     {% for request in requestpage %}
-          <div>
+    <h1>User Page {{ user.username }}</h1>
 
-              <a href="#">{{ request.type }}</a>
-              <small>{{ request.result }}</small>
-            <h2>{{ request.request_time }}</h2>
-            <p>{{ request.requester }}</p>
-          </div>
-    {% endfor %}
+<div class="content">
+    <div class="history">
+        <h2>History</h2>
+        <table class="historyt">
+            <tr>
+                <th>Requester</th>
+                <th>Type</th>
+                <th>Result</th>
+                <th>Request_time</th>
+            </tr>
+        {% for request in requestpage %}
+            <tr>
+                <td>{{ request.requester }}</td>
+                {% if request.type == 1 %}
+                    <td>генерація випадкового числа</td>
+                {% endif %}
+                {% if request.type == 2 %}
+                    <td>генерація послідовності чисел із заданого діапазону</td>
+                {% endif %}
+                {% if request.type == 3 %}
+                    <td>вибір випадкового слова з вказаного тексту</td>
+                {% endif %}
+                {% if request.type == 4 %}
+                    <td>генерація паролю</td>
+                {% endif %}
+                {% if request.type == 5 %}
+                    <td>генерація наборів паролів</td>
+                {% endif %}
+                <td>{{ request.result }}</td>
+                <td>{{ request.request_time }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+    </div>
+
+    <div class="statistic">
+        <h3>Statistic</h3>
+        <p>Загальна кількість запитів {{ requestpage.count }}</p>
+        <ul>
+            <li><p>Запитів типу генерація випадкового числа {{ type1.count }}</p></li>
+            <li><p>Запитів типу генерація послідовності чисел із заданого діапазону {{ type2.count }}</p></li>
+            <li><p>Запитів типу вибір випадкового слова з вказаного тексту {{ type3.count }}</p></li>
+            <li><p>Запитів типу генерація паролю {{ type4.count }}</p></li>
+            <li><p>Запитів типу генерація наборів паролів {{ type5.count }}</p></li>
+        </ul>
+        <div class="randomhis">
+            <form  method="post">
+                {% csrf_token %}
+                <input type="submit" name="randombutton" value="Random request from history" />
+                {% if request.user.is_authenticated %}
+                <table class="tabler">
+                    <tr>
+                        <th>Requester</th>
+                        <th>Type</th>
+                        <th>Result</th>
+                        <th>Request_time</th>
+                    </tr>
+                    <tr>
+                        {% for req in randomhistory %}
+                        <th>{{ req.requester }}</th>
+                        <th>{{ req.type }}</th>
+                        <th>{{ req.result }}</th>
+                        <th>{{ req.request_time }}</th>
+                        {% endfor %}
+                    </tr>
+                    {% else %}
+                    {% endif %}
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock content %}
 

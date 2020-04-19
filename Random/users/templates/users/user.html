@@ -6,6 +6,31 @@
 <div class="content">
     <div class="history">
         <h2>History</h2>
+        <div class="randomhis">
+            <form  method="post">
+                {% csrf_token %}
+                <input type="submit" name="randombutton" value="Random request from history" />
+                {% if request.user.is_authenticated %}
+                <table class="tabler">
+                    <tr>
+                        <th>Requester</th>
+                        <th>Type</th>
+                        <th>Result</th>
+                        <th>Request_time</th>
+                    </tr>
+                    <tr>
+                        {% for req in randomhistory %}
+                        <th>{{ req.requester }}</th>
+                        <th>{{ req.type }}</th>
+                        <th>{{ req.result }}</th>
+                        <th>{{ req.request_time }}</th>
+                        {% endfor %}
+                    </tr>
+                    {% else %}
+                    {% endif %}
+                </table>
+            </form>
+        </div>
         <table class="historyt">
             <tr>
                 <th>Requester</th>
@@ -13,7 +38,7 @@
                 <th>Result</th>
                 <th>Request_time</th>
             </tr>
-        {% for request in requestpage %}
+        {% for request in requestpage|slice:":50" %}
             <tr>
                 <td>{{ request.requester }}</td>
                 {% if request.type == 1 %}
@@ -49,31 +74,6 @@
             <li><p>Запитів типу генерація паролю {{ type4.count }}</p></li>
             <li><p>Запитів типу генерація наборів паролів {{ type5.count }}</p></li>
         </ul>
-        <div class="randomhis">
-            <form  method="post">
-                {% csrf_token %}
-                <input type="submit" name="randombutton" value="Random request from history" />
-                {% if request.user.is_authenticated %}
-                <table class="tabler">
-                    <tr>
-                        <th>Requester</th>
-                        <th>Type</th>
-                        <th>Result</th>
-                        <th>Request_time</th>
-                    </tr>
-                    <tr>
-                        {% for req in randomhistory %}
-                        <th>{{ req.requester }}</th>
-                        <th>{{ req.type }}</th>
-                        <th>{{ req.result }}</th>
-                        <th>{{ req.request_time }}</th>
-                        {% endfor %}
-                    </tr>
-                    {% else %}
-                    {% endif %}
-                </table>
-            </form>
-        </div>
     </div>
 </div>
 {% endblock content %}

@@ -16,8 +16,12 @@
 
      <div class="randommethods">
           <div class="metod" id="metod1">
-               <form  method="post">
+               <form action="" method="post">
                     {% csrf_token %}
+                    <label for="m1r1">Початок діапазону</label>
+                    <input type="number" id="m1r1" name="range1" min="-2147483648" max="+2147483647" value="1">
+                    <label for="m1r2">Кінець діапазону</label>
+                    <input type="number" id="m1r2" name="range2" min="-2147483648" max="+2147483647" value="100">
                     {% if request.user.is_authenticated %}
                          <p>{{ reqnum1.result }}</p>
                     {% else %}
@@ -29,18 +33,16 @@
           <div class="metod" id="metod2">
                <form action="" method="post">
                     {% csrf_token %}
+                    <label for="ran1">Початок діапазону</label>
+                    <input type="number" id="ran1" name="range11" min="-2147483648" max="+2147483647" value="1">
+                    <label for="ran2">Кінець діапазону</label>
+                    <input type="number" id="ran2" name="range21" min="-2147483648" max="+2147483647" value="100">
+                    <label for="ran3">Кількість чисел, що потрібно сгенерувати</label>
+                    <input type="number" id="ran3" name="range31" min="0" max="100" value="1">
                     {% if request.user.is_authenticated %}
-                         <p>
-                              <input type="number" name="range1" min="-2147483648" max="+2147483647" value="1">
-                              <input type="number" name="range2" min="-2147483648" max="+2147483647" value="100">
-                              <p>{{ reqnum2.result }}</p>
-                         </p>
+                         <p>{{ reqnum2.result }}</p>
                     {% else %}
-                         <p>
-                              <input type="number" name="range1" min="-2147483648" max="+2147483647" value="1">
-                              <input type="number" name="range2" min="-2147483648" max="+2147483647" value="100">
                               <p>{{ reqnum2 }}</p>
-                         </p>
                     {% endif %}
                     <input type="submit" name="metod2button" value="Generate" />
                </form>
@@ -51,7 +53,7 @@
                     {% if request.user.is_authenticated %}
                          <p>
                               <p><b>Введіть текст</b></p>
-                              <p><textarea name="text"></textarea></p>
+                              <p><textarea name="text" required ></textarea></p>
                               <p>{{ reqnum3.result }}</p>
                          </p>
                     {% else %}
@@ -82,8 +84,10 @@
                      {% csrf_token %}
                     {% if request.user.is_authenticated %}
                          <p>
-                              <input type="number" name="numberpasswd"  value="1">
-                              <input type="number"  name="len"  value="100">
+                              <label for="count">Кількість паролів</label>
+                              <input type="number" name="numberpasswd" id="count" value="1">
+                              <label for="length">Довжина паролю</label>
+                              <input type="number"  name="len"  id="length" max="50" value="50">
                               <p>{{ reqnum5.result }}</p>
                          </p>
                     {% else %}

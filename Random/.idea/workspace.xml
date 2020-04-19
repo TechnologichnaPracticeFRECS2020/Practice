@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df5797a1-ee1c-444e-8a5e-6e5616ec6ae8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Home/static/Home/script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Functions/generatenumber.py" beforeDir="false" afterPath="$PROJECT_DIR$/Functions/generatenumber.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Functions/generatenumfromrange.py" beforeDir="false" afterPath="$PROJECT_DIR$/Functions/generatenumfromrange.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Home/static/Home/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/Home/static/Home/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home/templates/Home/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Home/templates/Home/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Home/templates/Home/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Home/templates/Home/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Home/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Random/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Random/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/templates/users/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/users/templates/users/user.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
     </list>

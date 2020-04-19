@@ -25,9 +25,25 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
 }
 .randommethods {
-  width: 500px;
+  width: 150px;
   height: 150px;
   transition: .5s;
+  margin-top:30px;
+}
+label[for="var1"]:hover{
+    color:#5f788a;
+}
+label[for="var2"]:hover{
+    color:#5f788a;
+}
+label[for="var3"]:hover{
+    color:#5f788a;
+}
+label[for="var4"]:hover{
+    color:#5f788a;
+}
+label[for="var5"]:hover{
+    color:#5f788a;
 }
 #var1:checked ~ label[for="var1"]{
     color:#5f788a;
@@ -75,69 +91,14 @@ h1, h2, h3, h4, h5, h6 {
 .metod{
     display:none;
 }
-
-.content-section {
-  background: #ffffff;
-  padding: 10px 20px;
-  border: 1px solid #dddddd;
-  border-radius: 3px;
-  margin-bottom: 20px;
-}
-
-.article-title {
-  color: #444444;
-}
-
-a.article-title:hover {
-  color: #428bca;
-  text-decoration: none;
-}
-
-.article-content {
-  white-space: pre-line;
-}
-
-.article-img {
-  height: 65px;
-  width: 65px;
-  margin-right: 16px;
-}
-
-.article-metadata {
-  padding-bottom: 1px;
-  margin-bottom: 4px;
-  border-bottom: 1px solid #e3e3e3
-}
-
-.article-metadata a:hover {
-  color: #333;
-  text-decoration: none;
-}
-
-.article-svg {
-  width: 25px;
-  height: 25px;
-  vertical-align: middle;
-}
-
-.account-img {
-  height: 125px;
-  width: 125px;
-  margin-right: 20px;
-  margin-bottom: 16px;
-}
-
-.account-heading {
-  font-size: 2.5rem;
-}
 .content {
-    width: 1000px;
+    width: 300px;
     height: 2000px;
     margin: 10px;
 }
 .history {
     float:left;
-    width: 300px;
+    width:200px;
 
 }
 .statistic {
@@ -148,10 +109,10 @@ a.article-title:hover {
     border-spacing: 30px;
    }
 .historyt td,th {
-    padding: 20px;
+    padding: 30px;
 }
 .randomhis {
-    margin: 20px;
+    margin: 10px;
 }
 .tabler {
     border-spacing: 10px;
@@ -171,6 +132,7 @@ a.article-title:hover {
 input[name="raz"]{
     display:none;
 }
+
 
 
 

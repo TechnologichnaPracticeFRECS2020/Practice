@@ -14,7 +14,9 @@ def home(request):
     if request.method == 'POST':
         if 'metod1button' in request.POST:
             if request.user.is_authenticated:
-                res1 = generatenumber.gennum()
+                a = request.POST.get("range1")
+                b = request.POST.get("range2")
+                res1 = generatenumber.genfromrange(int(a),int(b))
                 new1 = UserRequest()
                 new1.requester = request.user
                 new1.type = 1
@@ -23,16 +25,19 @@ def home(request):
                 new1.save()
                 return render(request, 'Home/home.html', { 'reqnum1': new1 })
             else:
-                res1 = generatenumber.gennum()
+                a = request.POST.get("range1")
+                b = request.POST.get("range2")
+                res1 = generatenumfromrange.genfromrange(int(a),int(b))
                 context1 = {
                     'reqnum1': res1
                 }
                 return render(request, 'Home/home.html', context1)
         elif 'metod2button' in request.POST:
             if request.user.is_authenticated:
-                a = request.POST.get("range1")
-                b = request.POST.get("range2")
-                res2 = generatenumfromrange.genfromrange(int(a),int(b))
+                a = request.POST.get("range11")
+                b = request.POST.get("range21")
+                c = request.POST.get("range31")
+                res2 = generatenumfromrange.genfromrange(int(a),int(b),int(c))
                 new2 = UserRequest()
                 new2.requester = request.user
                 new2.type = 2
@@ -88,7 +93,7 @@ def home(request):
                 len = request.POST.get("len")
                 res5 = gensetpassword.gensetpassword(int(numberpasswd),int(len))
                 new5 = UserRequest()
-                new5.requester = User.objects.first()
+                new5.requester = request.user
                 new5.type = 5
                 new5.result = res5
                 new5.request_time = timezone.now()

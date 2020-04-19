@@ -3,7 +3,7 @@ from users.models import UserRequest
 from django.contrib import messages
 from .forms import UserRegisterForm
 from django.contrib.auth.decorators import login_required
-from Functions.generatenumfromrange import genfromrange
+from Functions.generatenumber import genfromrange
 
 def register(request):
     if request.method == 'POST':

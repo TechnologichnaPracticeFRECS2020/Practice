@@ -1,5 +1,9 @@
 import random
 
-def genfromrange(a, b):
-    return random.randint(a, b)
+def genfromrange(a, b, c):
+    password=[]
+    for i in range(c):
+        password.append(random.randint(a, b))
+    return password
+
 

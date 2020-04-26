@@ -52,13 +52,13 @@
                     {% csrf_token %}
                     {% if request.user.is_authenticated %}
                          <p>
-                              <p><b>Введіть текст</b></p>
+
                               <p><textarea name="text" required ></textarea></p>
                               <p>{{ reqnum3.result }}</p>
                          </p>
                     {% else %}
                          <p>
-                              <p><input type="file" name="f">
+
                               <p><b>Введіть текст</b></p>
                               <p><textarea name="text"></textarea></p>
                               <p>{{ reqnum3 }}</p>

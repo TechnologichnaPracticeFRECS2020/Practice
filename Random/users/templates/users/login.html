@@ -1,6 +1,9 @@
 {% extends "Home/base.html" %}
+{% load socialaccount %}
+{% providers_media_js %}
 {% load crispy_forms_tags %}
 {% block content %}
+
 <div class="content-section">
     <form method="POST">
         {% csrf_token %}
@@ -10,6 +13,8 @@
         </fieldset>
         <div class="form-group">
             <button class="btn btn-outline-info" type="submit">Log In</button>
+            <button><a href="{% provider_login_url 'google' %}">Google login</a></button>
+            <button><a href="{% provider_login_url 'facebook' method='oauth2' %}">Facebook login</a></button>
         </div>
     </form>
     <div class="boarder-top pt-3">

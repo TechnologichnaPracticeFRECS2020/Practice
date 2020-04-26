@@ -4,4 +4,5 @@ from users import views as user_views
 
 urlpatterns = [
     path('', views.home, name='random-home'),
+    path('',include('allauth.urls')),
 ]

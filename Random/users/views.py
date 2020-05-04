@@ -29,10 +29,7 @@ def user(request):
     }
     if request.method == 'POST':
         if 'randombutton' in request.POST:
-            a = UserRequest.objects.first().id
-            b = UserRequest.objects.last().id
-            result = genfromrange(a, b)
-            context['randomhistory']= UserRequest.objects.filter(id=result)
+            context['randomhistory']= UserRequest.objects.filter(requester=request.user).order_by('?').first()
     return render(request, 'users/user.html', context)
 
 

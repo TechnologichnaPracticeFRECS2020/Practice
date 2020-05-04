@@ -27,7 +27,7 @@ def home(request):
             else:
                 a = request.POST.get("range1")
                 b = request.POST.get("range2")
-                res1 = generatenumfromrange.genfromrange(int(a),int(b))
+                res1 = generatenumber.genfromrange(int(a),int(b))
                 context1 = {
                     'reqnum1': res1
                 }
@@ -37,7 +37,7 @@ def home(request):
                 a = request.POST.get("range11")
                 b = request.POST.get("range21")
                 c = request.POST.get("range31")
-                res2 = generatenumfromrange.genfromrange(int(a),int(b),int(c))
+                res2 = generatenumfromrange.genfromrange3(int(a),int(b),int(c))
                 new2 = UserRequest()
                 new2.requester = request.user
                 new2.type = 2
@@ -46,9 +46,10 @@ def home(request):
                 new2.save()
                 return render(request, 'Home/home.html', { 'reqnum2': new2 })
             else:
-                a = request.POST.get("range1")
-                b = request.POST.get("range2")
-                res2 = generatenumfromrange.genfromrange(int(a),int(b))
+                a = request.POST.get("range11")
+                b = request.POST.get("range21")
+                c = request.POST.get("range31")
+                res2 = generatenumfromrange.genfromrange3(int(a),int(b),int(c))
                 context2 = {
                     'reqnum2': res2
                 }
@@ -73,7 +74,8 @@ def home(request):
                 return render(request, 'Home/home.html', context3)
         elif 'metod4button' in request.POST:
             if request.user.is_authenticated:
-                res4 = generatepassword.genpassword()
+                length = request.POST.get("len41")
+                res4 = generatepassword.genpassword(length)
                 new4 = UserRequest()
                 new4.requester = request.user
                 new4.type = 4
@@ -82,7 +84,8 @@ def home(request):
                 new4.save()
                 return render(request, 'Home/home.html', { 'reqnum4': new4 })
             else:
-                res4 = generatepassword.genpassword()
+                length = request.POST.get("len41")
+                res4 = generatepassword.genpassword(length)
                 context4 = {
                     'reqnum4': res4
                 }

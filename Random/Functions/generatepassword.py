@@ -1,10 +1,9 @@
 import random
 
-def genpassword():
-    chars = '+-/*!@#$%^&?=<>abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
-    length = 10
+def genpassword(length):
+    chars = '+-/*!@#$%^&?=<>abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'
     password = ''
-    for i in range(length):
+    for i in range(int(length)):
         password += random.choice(chars)
     return password
 

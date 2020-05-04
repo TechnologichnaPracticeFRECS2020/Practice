@@ -19,12 +19,24 @@
                         <th>Request_time</th>
                     </tr>
                     <tr>
-                        {% for req in randomhistory %}
-                        <th>{{ req.requester }}</th>
-                        <th>{{ req.type }}</th>
-                        <th>{{ req.result }}</th>
-                        <th>{{ req.request_time }}</th>
-                        {% endfor %}
+                            <th>{{ randomhistory.requester }}</th>
+                            {% if randomhistory.type == 1 %}
+                                <td>генерація випадкового числа</td>
+                            {% endif %}
+                            {% if randomhistory.type == 2 %}
+                                <td>генерація послідовності чисел із заданого діапазону</td>
+                            {% endif %}
+                            {% if randomhistory.type == 3 %}
+                                <td>вибір випадкового слова з вказаного тексту</td>
+                            {% endif %}
+                            {% if randomhistory.type == 4 %}
+                                <td>генерація паролю</td>
+                            {% endif %}
+                            {% if randomhistory.type == 5 %}
+                                <td>генерація наборів паролів</td>
+                            {% endif %}
+                            <th>{{ randomhistory.result }}</th>
+                            <th>{{ randomhistory.request_time }}</th>
                     </tr>
                     {% else %}
                     {% endif %}

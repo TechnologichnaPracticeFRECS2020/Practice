@@ -122,6 +122,7 @@ label[for="var5"]:hover{
 }
 .radiolist>input:nth-child(2n) {
     display:table;
+    
 }
 .radiolist>label{
   display: flex;
